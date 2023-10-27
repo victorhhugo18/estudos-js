@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá Mundo</title>
+</head>
+
+<body>
+    <h4>Aperte os botões</h4>
+    <input type="button" value="Apresentar" onclick="apresentar()"><br><br>
+    <input type="button" value="Gritar" onmouseover="gritar()"><br>
+
+
+    <script>
+        // Início do JS
+
+
+        function apresentar() {
+            var nome = prompt('Digite seu nome:');
+            var idade = prompt('Digite sua idade:');
+            document.write('Olá ' + nome + ', que bom que você tem ' + idade + ' anos;')
+        }
+
+        function gritar() {
+            alert('UUUUUAUUUUUAAAAAHAAHH');
+        }
+    </script>
+</body>
+
+</html>
