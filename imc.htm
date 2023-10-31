@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Calculadora IMC</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+<!-- Insira o código JS onde for necessário, dentro da tag específica: -->
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand navbar-light bg-light">
+              <div class="navbar-brand">
+                  Calculadora IMC
+              </div>
+          </nav>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 d-flex justify-content-center w-50">
+                <form>
+                    <div class="form-group">
+                        <label for="altura">Altura:</label>
+                        <input type="number" class="form-control" id="altura" aria-describedby="altura" placeholder="Sua altura">
+                        <small class="form-text text-muted">Informe sua altura, ex: 1,86</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso:</label>
+                        <input type="number" class="form-control" id="peso" aria-describedby="peso" placeholder="Seu peso">
+                        <small class="form-text text-muted">Informe eu peso, ex: 72,5</small>
+                    </div>
+                    <!-- Utilize o evento DOM adequado para invocar a função js corretamente: -->
+                    <button type="button" class="btn btn-primary btn-block" onclick="calcularIMC()">Calcular</button>
+                </form>
+                
+            </div>
+            <div class="col-md-6 col-sm-12 mt-4">
+                <h2 class="text-center">Resultado:</h2>
+                <!-- O resultado deve ser exibido dentros dos "spans" abaixo: -->
+                <p>Seu IMC é:  <span id="resultIMC"></span><br>
+                Sua classificação é:  <span id="resultClassific"></span></p>
+            </div>
+        </div>
+      </div>
+
+      <script>
+        function calcularIMC(){
+          var a = parseFloat(altura.value);
+          var p = parseFloat(peso.value);
+
+          var imc = p / (a*a);
+          resultIMC.innerHTML = imc.toFixed(2);
+
+          if(imc <= 18.5){
+            resultClassific.innerHTML = "Baixo Peso";
+            resultClassific.style.color = "#83C635";
+          }
+          else if(imc >= 18.5 && imc <= 24.99){
+            resultClassific.innerHTML = "Normal";
+            resultClassific.style.color = "#C0D90B";
+          }
+          else if(imc >= 25 && imc <= 29.99){
+            resultClassific.innerHTML = "Sobrepeso";
+            resultClassific.style.color = "#";
+          }
+          else if(imc >= 30){
+            resultClassific.innerHTML = "Obesidade";
+            resultClassific.style.color = "#";
+          }
+
+        }
+      </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
