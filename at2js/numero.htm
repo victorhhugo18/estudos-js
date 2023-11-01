@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Número</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Descubra o Número</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <input id="tentativa" class="form-control" type="number" placeholder="Digite seu palpite">
+                <button id="advinhar" class="btn btn-primary btn-block mt-2">Adivinhar</button>
+                <h1 id="resultado" class="text-center mt-3"></h1>
+            </div>
+        </div>
+    </div>
+ 
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        //Gerar um número aleatório
+        const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+        const botaoAdivinhar = document.getElementById('advinhar');
+
+        botaoAdivinhar.addEventListener('click', function () {
+        //Obter o número digitado
+        const numeroUsuario = parseInt(document.getElementById('tentativa').value);
+
+        //Verificar se o número digitado está correto e mostrar se é maior ou menor
+        if (numeroUsuario === numeroAleatorio){
+            document.getElementById('resultado').textContent = 'Parabéns! Você advinhou o número';
+        }
+        else if (numeroUsuario < numeroAleatorio){
+            document.getElementById('resultado').textContent = 'Tente novamente. O número é maior que seu palpite!';
+        }
+        else {
+            document.getElementById('resultado').textContent = 'Tente novamente. O número é menor que seu palpite!';
+
+        }
+    
+        });
+    </script>
+</body>
+</html>

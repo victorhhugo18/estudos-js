@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moeda</title>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Conversor de Moeda</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="valorDolar">Valor do Dólar em Reais</label>
+                    <input type="number" class="form-control" id="valorDolar" placeholder="Insira o valor do dólar em reais">
+                </div>
+                <div class="form-group">
+                    <label for="valorConverter">Valor do Dólar a Converter</label>
+                    <input type="number" class="form-control" id="valorConverter" placeholder="Insira o valor em dólar a ser convertido">
+                </div>
+                <button id="converter" class="btn btn-primary btn-block" onclick="converter()">Converter</button>
+                <h2 class="text-center mt-3" id="resultado"></h2>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        //Função para converter o dólar
+       function converter(){
+        var dolar = parseFloat(valorDolar.value); //Armazenar o valor do dólar que foi digitado no input valorDolar
+        var converter = parseFloat(valorConverter.value); //Armazenar o valor em dólar a ser convertido, que foi digitado no input valorConverter
+
+        var convertido = (dolar*converter); //Fazer a conversão
+        resultado.innerHTML = "Valor Convertido: R$" + convertido.toFixed(2); //Mostrando o resultado para o usuário, usando a concatenação 
+       }
+    </script>
+</body>
+</html>

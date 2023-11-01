@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Contador de Caracteres</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <textarea id="texto" class="form-control" rows="5" placeholder="Digite o seu texto aqui" onkeyup="mudarhtml()"></textarea>
+                <p class="text-center mt-2">Total de Caracteres: <span id="contador">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione os scripts JavaScript do Bootstrap e o seu próprio script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        //Funçao que vai contar os caracteres
+        function mudarhtml(){
+            contador.innerHTML = texto.value.length; // texto.value.length vai contar quantos caracteres estão sendo digitados no textarea
+        }
+    </script>
+</body>
+
+</html>
